@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geologica&family=Roboto&display=swap" rel="stylesheet">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1 style="
+            padding-top: 30px;
+            font-size: 2rem;
+            font-family: geologica;
+            text-align: center;
+        ">Job Application Logger</h1>
+        <div class="container">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput-company" placeholder="name@example.com">
+                <label for="floatingInput">Company name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingPlace" placeholder="Password">
+                <label for="floatingPassword">Place</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="salary-range" class="form-control" id="floatingSalaryRange" placeholder="Password">
+                <label for="floatingPassword">Salary Range</label>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Job description</span>
+                <textarea class="form-control" aria-label="With textarea" id="FloatingJobDesc"></textarea>
+              </div>
+            <button id="log-button" type="button" class="btn btn-success" onclick="log()">Log</button>
+
+        </div>
+        
+        
+        <script src="index1.js" async defer></script>
+    </body>
+</html>
