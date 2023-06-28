@@ -1,3 +1,6 @@
+
+<%- include("header") -%>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -45,6 +48,10 @@
                     <span   class="input-group-text">Job description</span>
                     <textarea name="job_desc" type="text" class="form-control" aria-label="With textarea" id="FloatingJobDesc"></textarea>
                 </div>
+                <div class="form-floating mb-3">
+                    <input name="job_link" type="text" class="form-control" id="floatingSalaryRange" placeholder="Password">
+                    <label for="floatingPassword">Job Website link</label>
+                </div>
                 <button action="/" method="post" name="log-btn" id="log-button" type="submit" class="btn btn-success" onclick="">Log</button>
 
             </div>
@@ -68,19 +75,29 @@
                     <th scope="col">Salary range</th>
                     <th scope="col">Date applied</th>
                     <th scope="col">Job description</th>
+                    <th scope="col">Job web link</th>
+                    <th scope="col">Remove Job</th>
+
+
                   </tr>
                 </thead>
                 <tbody>
                   
-                    <% for(var x = 0; x < array_jobs.length; x++){ %>
+                    <% for(var x = array_jobs.length-1; x >= 0; x--){ %>
                         <tr>
                             <th scope="row"><%= x + 1 %></th>
                             <td><%= array_jobs[x].company %></td>
                             <td><%= array_jobs[x].location %></td>
-                            <td><%= array_jobs[x].salary_range %></td>
+                            <td><%= array_jobs[x].salaryRange %></td>
                             <td><%= array_jobs[x].date %></td>
-                            <td><%= array_jobs[x].job_desc %></td>
-                            <td><button name="desc" onclick="" type="button" class="btn btn-dark">Click to view</button></td>
+                            <td><%= array_jobs[x].jobDescription %></td> 
+                            <td><a name="desc" onclick="" href= "<%= array_jobs[x].jobWebLink %>" target="_blank" type="button" class="btn btn-dark">Click -> job website</a></td>
+                            <td>
+                                <form action="/delete" method="post">
+                                    <input name="confirm" type="text" class="form-control" id="floatingSalaryRange" placeholder="yes->Confirm">
+                                    <button id="del_man" class="btn btn-warning"  name="del" value="<%=array_jobs[x]._id%>" type="submit" >Remove Job</button>
+                                </form>
+                            </td>
                         </tr>
                     <%}%>
                     
@@ -91,6 +108,11 @@
 
         </div>
         
-        <script src="index1.js" async defer></script>
+        <script src="index.js" async defer>
+
+        </script>
     </body>
 </html>
+
+
+<%- include("footer") -%>
