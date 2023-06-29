@@ -36,8 +36,11 @@ const Job = mongoose.model("Job", jobsSchema);
 
 app.get('/', async function(req, res){
 
-    var jobs = await Job.find({});
-
+    try{
+        var jobs = await Job.find({});
+    }catch(err){
+        console.log(err)
+    }
   
 
   res.render("lists", {array_jobs:jobs});
